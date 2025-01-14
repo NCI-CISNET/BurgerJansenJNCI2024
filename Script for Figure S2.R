@@ -14,7 +14,7 @@ library("gridExtra")
 library("ggtext")
 
 #Read in the data file
-Elimination_timings = read.table("Elimination_timings_stratum4_relative V4 (supplement figure).txt", header=TRUE)
+Elimination_timings = read.table("Elimination_timings_supplement.txt", header=TRUE)
 
 #Do some modifications etc to ensure everything works and has good labels 
 Elimination_timings$Vaccination[Elimination_timings$Vaccination=="Average"] = "Average vaccination coverage"
@@ -86,7 +86,7 @@ correlated_v_uncorrelated_herdimmunity = ggplot(data=Elimination_timings, aes(x=
   geom_vline(xintercept = -30, linetype="dashed")+
   geom_vline(xintercept = 40, linetype="dashed")+
   geom_vline(xintercept = 0)+
-  labs(x="\nDifference compared to national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
+  labs(x="\nDifference compared with national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
   scale_x_continuous(breaks = c(-41.25,seq(from=-30,to=40,by=10),52.5),limits = c(-47.5,57.5), labels = c("Already\neliminated",seq(from=-30,to=40,by=10),"Never\neliminated"))+
   scale_y_discrete(labels = ylabels,
                    breaks = ylabels)+

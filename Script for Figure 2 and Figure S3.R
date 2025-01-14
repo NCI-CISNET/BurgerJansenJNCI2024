@@ -2,17 +2,17 @@
 #"Disparities in cervical cancer elimination time frames in the United States: a comparative modeling study"
 #By Emily A. Burger et al.
 
-
-setwd("...")
-
-#Required packages
-library("data.table")
-library("tidyr")
-library("ggplot2")
-library("cowplot")
-library("grid")
-library("gridExtra")
-library("ggtext")
+  
+  setwd("C:/Documenten/Work/Projects and papers/CISNET/HEterogeneities/JNCI manuscript/Scripts for submission")
+  
+  #Required packages
+  library("data.table")
+  library("tidyr")
+  library("ggplot2")
+  library("cowplot")
+  library("grid")
+  library("gridExtra")
+  library("ggtext")
 
 #Read in the data file. 
 Elimination_timings = read.table("Elimination_timings_main.txt", header=TRUE)
@@ -115,8 +115,8 @@ Timings_graph_herdimmunity = ggplot(data=Elimination_timings_herdimmunity, aes(x
   geom_vline(xintercept = -30, linetype="dashed")+
   geom_vline(xintercept = 40, linetype="dashed")+
   geom_vline(xintercept = 0)+
-  labs(x="\nDifference compared to national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
-  scale_x_continuous(breaks = c(-41.25,seq(from=-30,to=40,by=10),52.5),limits = c(-47.5,57.5), labels = c("Already\neliminated",seq(from=-30,to=40,by=10),"Never\neliminated"))+
+  labs(x="\nDifference compared with national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
+  scale_x_continuous(breaks = c(-41.25,seq(from=-30,to=40,by=10),52.5),limits = c(-47.5,57.5), labels = c(expression("Already eliminated"^a),seq(from=-30,to=40,by=10),expression("Never eliminated")))+
   scale_y_discrete(labels = ylabels_2,
                    breaks = ylabels_2)+
   scale_color_manual(values = colors_graph)+
@@ -165,8 +165,8 @@ Timings_graph_noherdimmunity = ggplot(data=Elimination_timings_herdimmunity, aes
   geom_vline(xintercept = -60, linetype="dashed")+
   geom_vline(xintercept = 30, linetype="dashed")+
   geom_vline(xintercept = 0)+
-  labs(x="\nDifference compared to national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
-  scale_x_continuous(breaks = c(-77.5,seq(from=-60,to=30,by=10),47.5),limits = c(-90,60), labels = c("Already\neliminated",seq(from=-60,to=30,by=10),"Never\neliminated"))+
+  labs(x="\nDifference compared with national (weighted average)\ncervical cancer elimination year without correlated behavior",y="Population strata\n")+
+  scale_x_continuous(breaks = c(-77.5,seq(from=-60,to=30,by=10),47.5),limits = c(-90,60), labels = c(expression("Already eliminated"^a),seq(from=-60,to=30,by=10),expression("Never eliminated")))+
   scale_y_discrete(labels = ylabels_2,
                    breaks = ylabels_2)+
   scale_color_manual(values = colors_graph)+
